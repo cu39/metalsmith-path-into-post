@@ -24,7 +24,7 @@ Metalsmith(__dirname)
   .use(pathIntoPost({
     pattern: /\.md$/,
     ext: '.html',
-    publicPath: '/'
+    publicPathPrefix: '/'
   })
   .build();
 ```
@@ -37,7 +37,7 @@ or for CLI
     "metalsmith-permalinks": {
       "pattern": "\\.md$",
       "ext": ".html",
-      "publicPath": "/",
+      "publicPathPrefix": "/",
     }
   }
 }
@@ -47,4 +47,4 @@ or for CLI
 
  * `pattern` RegExp to filter files
  * `ext` String to replace source file's extension with
- * `publicPath` String to be prepended to source file path
+ * `publicPathPrefix` String to be prepended to source file path
