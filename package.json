@@ -1,6 +1,6 @@
 {
   "name": "metalsmith-path-into-post",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Add source file path into Metalsmith's post metadata. With this plugin each post knows where it is.",
   "repository": "git://github.com/cu39/metalsmith-path-into-post",
   "main": "lib",
