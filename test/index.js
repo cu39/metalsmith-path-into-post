@@ -82,10 +82,11 @@ describe('metalsmith-path-into-post', function () {
   it('should replace extensions when "ext" option is given', function (done) {
     var pathInDir = path.join(path.resolve(__dirname), 'fixtures', 'extension');
     var regex = /\.md$/;
-    var ext = '.html';
+    var extStr = '.html';
     Metalsmith(pathInDir)
       .use(pip({
-        pattern: regex, ext
+        pattern: regex,
+        ext: extStr
       }))
       .build(function (err, files) {
         if (err) return done(err);
@@ -93,7 +94,7 @@ describe('metalsmith-path-into-post', function () {
         assert.equal(paths.length, 3);
         assert.deepEqual(paths.forEach(function (file) {
           if (file.match(regex))
-            assert.equal(files[file].path, file.replace(regex, ext));
+            assert.equal(files[file].path, file.replace(regex, extStr));
           else
             assert.equal(typeof files[file].path, 'undefined');
         }));
