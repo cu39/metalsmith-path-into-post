@@ -1,4 +1,6 @@
+# Adds --harmony_generators flag when available/necessary
 node ?= node
+node_flags ?= $(shell $(node) --v8-options | grep generators | cut -d ' ' -f 3)
 
 mocha = $(node) $(node_flags) ./node_modules/.bin/_mocha
 
